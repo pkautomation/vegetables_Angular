@@ -1,20 +1,24 @@
 {
-  "something": [
+  "vegetables": [
     {
       "id" : 1,
-      "name" : "testing"
+      "name" : "tomato",
+      "description" : "lovely red"
     },
     {
       "id" : 2,
-      "name" : "testing2"
+      "name" : "cucumber",
+      "description" : "lovely green"
     },
     {
       "id" : 3,
-      "name" : "testing3"
+      "name" : "onion",
+      "description" : "lovely purple"
     },
     {
       "id" : 4,
-      "name" : "testing4"
+      "name" : "garlic",
+      "description" : "grey"
     }
   ]
 }
