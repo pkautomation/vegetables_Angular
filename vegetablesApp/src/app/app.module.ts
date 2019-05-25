@@ -10,6 +10,7 @@ import { ItemListComponent } from './home/itemList/itemList.component';
 import { ItemDetailsComponent } from './home/itemDetails/itemDetails.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AddItemComponent } from './home/addItem/addItem.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddItemComponent } from './home/addItem/addItem.component';
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
       {path: 'welcome', component: WelcomeComponent},
       {path: 'itemDetails/:id', component: ItemDetailsComponent},

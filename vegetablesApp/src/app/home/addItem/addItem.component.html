@@ -1,34 +1,30 @@
 <app-navbar></app-navbar>
-<button mdbBtn type="button" color="elegant" (click)='onBack()' mdbWavesEffect>Back </button>
+
+
+<mdb-icon fas type="button" color="elegant" (click)='onBack()' size="2x" icon="angle-left"></mdb-icon>
 <div class="card-body">
   <div class="container-fluid">
     <div class="text-center">
  <!-- Material form row -->
-<form>
+<form (submit)="onSubmit()" >
     <!-- Grid row -->
     <div class="form-row">
-      <!-- Grid column -->
-      <div class="col">
-        <!-- Material input -->
-        <div class="md-form mt-0">
-          <input type="text" class="form-control" placeholder="First name">
-        </div>
-      </div>
-      <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col">
         <!-- Material input -->
         <div class="md-form mt-0">
-          <input type="text" class="form-control" placeholder="Last name">
+          <input [(ngModel)]="vegetableName" name="somename" type="text" class="form-control" placeholder="Name">
+          <input [(ngModel)]="vegetableDescription" name="somename2" type="text" class="form-control" placeholder="Description">
         </div>
       </div>
       <!-- Grid column -->
     </div>
     <!-- Grid row -->
-  </form>
-
-  <button mdbBtn type="button" color="elegant" (click)='onBack()' mdbWavesEffect>Confirm </button>
+    <div class="form-field">
+      <input type="submit" value="Add">
+    </div>
+</form>
   <!-- Material form row -->
     </div>
   </div>
