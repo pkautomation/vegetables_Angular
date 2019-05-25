@@ -1,0 +1,19 @@
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="welcome">Vegetables App </a></mdb-navbar-brand>
+
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a  [routerLink]="['/welcome']" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a  [routerLink]="['/itemList']" class="nav-link waves-light" mdbWavesEffect>Item List</a>
+          </li>
+      </ul>
+</mdb-navbar>
