@@ -7,20 +7,20 @@ import { Vegetable } from 'src/app/models/vegetable.js';
   templateUrl: 'ItemDetails.component.html'
 })
 export class ItemDetailsComponent {
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
   pageTitle = 'Details';
   collection = data.vegetables;
   desiredItem: Vegetable;
-  value: number;
-
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  id: number;
 
 
-// tslint:disable-next-line: use-life-cycle-interface
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.value = params.id; // --> Name must match wanted parameter
-      console.log('index:' + this.value);
-      this.desiredItem = this.collection.find( x => x.id == this.value);
+      this.id = params.id; // --> Name must match wanted parameter
+      console.log('index:' + this.id);
+      this.desiredItem = this.collection.find( x => x.id == this.id);
       console.log(this.desiredItem.name);
     });
   }

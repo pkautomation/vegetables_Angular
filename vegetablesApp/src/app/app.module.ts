@@ -10,7 +10,8 @@ import { ItemListComponent } from './home/itemList/itemList.component';
 import { ItemDetailsComponent } from './home/itemDetails/itemDetails.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AddItemComponent } from './home/addItem/addItem.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'welcome', component: WelcomeComponent},
@@ -34,6 +36,11 @@ import { FormsModule } from '@angular/forms';
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
       {path: '#', redirectTo: 'welcome'}
     ])
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, Input, NgModule, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,15 +7,20 @@ import { Router } from '@angular/router';
 })
 
 export class TopNavbarComponent {
-  @Input() pageTitle = 'Home Page';
+  public constructor(public router: Router) {}
+
+  @Input() pageTitle: string;
   @Input() isMainPage = false;
   @Input() isAddPage = false;
 
   @Output() clickBack = new EventEmitter();
+  @Output() clickClear = new EventEmitter();
 
-  public constructor(public router: Router) {}
-
-  @Input() public Back() {
+  @Input() public emitBack() {
     this.clickBack.emit();
+  }
+
+  @Input() public emitClear() {
+    this.clickClear.emit();
   }
 }

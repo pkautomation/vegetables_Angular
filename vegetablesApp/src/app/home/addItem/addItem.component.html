@@ -1,18 +1,17 @@
-<app-navbar [pageTitle]="this.pageTitle" (clickBack)="onBack()" [isAddPage]="isAddPage"></app-navbar>
+<app-navbar [pageTitle]="this.pageTitle" (clickBack)="onBack()"  (clickClear)="clearFields()" [isAddPage]="isAddPage"></app-navbar>
 
 <div class="card-body">
   <div class="container-fluid">
     <div class="text-center">
-      <form (submit)="onSubmit()" >
+      <form [formGroup]="addForm" (submit)="onSubmit()">
         <div class="form-row">
           <div class="col">
             <div class="md-form mt-0">
-              <input [(ngModel)]="vegetableName" name="somename" type="text" class="form-control" placeholder="Name">
-              <input [(ngModel)]="vegetableDescription" name="somename2" type="text" class="form-control" placeholder="Description">
+              <input [(ngModel)]="vegetableName" formControlName="name" name="name" type="text" class="form-control" placeholder="Name">
+              <input [(ngModel)]="vegetableDescription" formControlName="description" name="description" type="text" class="form-control" placeholder="Description">
             </div>
           </div>
         </div>
-
         <div class="form-field">
           <button mdbBtn type="submit" color="success" mdbWavesEffect>Add</button>
         </div>

@@ -14,11 +14,12 @@
 </mdb-navbar>
 
 <div class='card'>
-  <div class="card-header">
+  <div class="card-header text-center" >
     {{pageTitle}}
   </div>
   <div class="card-header">
-    <a *ngIf="isMainPage===false"><mdb-icon fas type="button" color="elegant" (click)='Back()' size="2x" icon="angle-left" mdbWavesEffect></mdb-icon></a>
-    <a *ngIf="isAddPage===false" [routerLink]="['/addItem']" floating="true"> <mdb-icon fas icon="plus-square"  size="2x" mdbWavesEffect></mdb-icon></a>
+    <a *ngIf="isMainPage === false"><mdb-icon class="mr-2 mr"  fas type="button" color="elegant" (click)='emitBack()' size="2x" icon="angle-left" mdbWavesEffect></mdb-icon></a>
+    <a *ngIf="isAddPage === false" class="float-right" [routerLink]="['/addItem']" floating="true"> <mdb-icon fas icon="plus-square"  size="2x" mdbWavesEffect></mdb-icon></a>
+    <a *ngIf="isAddPage === true" class="float-right" floating="true"> <mdb-icon fas icon="trash-alt" (click)='emitClear()' size="2x" mdbWavesEffect></mdb-icon></a>
   </div>
 </div>

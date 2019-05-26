@@ -1,20 +1,11 @@
 <app-navbar [pageTitle]="this.pageTitle"  (clickBack)="onBack()"></app-navbar>
 
-<div class='table-responsive'>
-  <table class='table'>
-    <thead>
-      <tr>
-        <td>
-          {{desiredItem.id}}
-        </td>
-        <td>
-          {{desiredItem.name}}
-        </td>
-        <td>
-          {{desiredItem.description}}
-        </td>
-      </tr>
-    </thead>
-  </table>
-</div>
-
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>{{desiredItem.name}}</h4>
+    </mdb-card-title>
+    <mdb-card-text>{{desiredItem.description}}</mdb-card-text>
+    <mdb-card-text>id:{{desiredItem.id}}</mdb-card-text>
+  </mdb-card-body>
+</mdb-card>

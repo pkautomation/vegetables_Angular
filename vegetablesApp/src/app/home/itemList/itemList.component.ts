@@ -7,19 +7,16 @@ import { Router } from '@angular/router';
 })
 
 export class ItemListComponent {
-  public pageTitle = 'Item List';
-
-  collection = data.vegetables;
-  //public veges: Vegetable[] = JSON.parse('../../datasource/items.json');
-
   constructor(private router: Router) {}
 
+  pageTitle = 'Item List';
+  collection = data.vegetables;
 
   deleteMe(index: number) {
     this.collection.splice(index, 1);
     this.router.navigate(['/itemList']);
   }
-  onBack($event) {
+  onBack() {
     this.router.navigate(['/welcome']);
   }
 }
