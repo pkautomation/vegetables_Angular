@@ -15,9 +15,13 @@
           </td>
           <td>
           <a [routerLink]="['/itemDetails', item.id]">{{item.name + "  "}}</a>
-          <mdb-icon *ngIf="show !== i" fas icon="angle-left" size="1x" (click)="showItem(i)"></mdb-icon>
-          <mdb-icon *ngIf="show === i" fas icon="angle-down" size="1x" (click)="showItem(i)"></mdb-icon>
-          <div><a *ngIf="show === i" [routerLink]="['/itemDetails', item.id]">{{item.description}}</a></div>
+          <a *ngIf="show !== i" (click)="showItem(i)">
+            <mdb-icon  fas icon="angle-left" size="1x"></mdb-icon></a>
+          <a *ngIf="show === i" (click)="showItem(i)">
+            <mdb-icon fas icon="angle-down" size="1x"></mdb-icon></a>
+          <div>
+            <a *ngIf="show === i" [routerLink]="['/itemDetails', item.id]">{{item.description}}</a>
+          </div>
           <td>
             <a (click)="deleteMe(i)">
               <mdb-icon fas icon="minus" class="float-right mr-5"></mdb-icon>
