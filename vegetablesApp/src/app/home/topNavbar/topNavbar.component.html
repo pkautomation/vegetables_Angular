@@ -1,19 +1,24 @@
-
-
-<!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href="welcome">Vegetables App </a>
+  </mdb-navbar-brand>
 
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="welcome">Vegetables App </a></mdb-navbar-brand>
-
-
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a  [routerLink]="['/welcome']" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a  [routerLink]="['/itemList']" class="nav-link waves-light" mdbWavesEffect>Item List</a>
-          </li>
-      </ul>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a  [routerLink]="['/welcome']" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/itemList']" class="nav-link waves-light" mdbWavesEffect>Item List</a>
+    </li>
+  </ul>
 </mdb-navbar>
+
+<div class='card'>
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-header">
+    <a *ngIf="isMainPage===false"><mdb-icon fas type="button" color="elegant" (click)='Back()' size="2x" icon="angle-left" mdbWavesEffect></mdb-icon></a>
+    <a *ngIf="isAddPage===false" [routerLink]="['/addItem']" floating="true"> <mdb-icon fas icon="plus-square"  size="2x" mdbWavesEffect></mdb-icon></a>
+  </div>
+</div>
