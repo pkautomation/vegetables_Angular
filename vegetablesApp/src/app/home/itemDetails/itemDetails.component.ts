@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as data from '../../datasource/items.json';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Vegetable } from 'src/app/models/vegetable.js';
@@ -6,7 +6,7 @@ import { Vegetable } from 'src/app/models/vegetable.js';
 @Component({
   templateUrl: 'ItemDetails.component.html'
 })
-export class ItemDetailsComponent {
+export class ItemDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   pageTitle = 'Details';
@@ -14,14 +14,10 @@ export class ItemDetailsComponent {
   desiredItem: Vegetable;
   id: number;
 
-
-  // tslint:disable-next-line: use-life-cycle-interface
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params.id; // --> Name must match wanted parameter
-      console.log('index:' + this.id);
+      this.id = params.id;
       this.desiredItem = this.collection.find( x => x.id == this.id);
-      console.log(this.desiredItem.name);
     });
   }
 

@@ -11,6 +11,7 @@ export class ItemListComponent {
 
   pageTitle = 'Item List';
   collection = data.vegetables;
+  show = -1;
 
   deleteMe(index: number) {
     this.collection.splice(index, 1);
@@ -18,5 +19,13 @@ export class ItemListComponent {
   }
   onBack() {
     this.router.navigate(['/welcome']);
+  }
+
+  showItem(index: number) {
+    if (index === this.show) {
+      this.show = -1;
+    } else {
+      this.show = index;
+    }
   }
 }
