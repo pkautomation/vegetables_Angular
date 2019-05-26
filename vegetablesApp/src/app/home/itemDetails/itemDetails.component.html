@@ -1,22 +1,20 @@
-<div class='card'>
-  <div class="card-header">
-    {{pageTitle}}
-  </div>
-  <a><mdb-icon fas type="button" color="elegant" (click)='onBack()' icon="angle-left"></mdb-icon></a>
-  <div class='table-responsive'>
-    <table class='table'>
-        <thead>
-            <tr>
-              {{desiredItem.id}}
-          </tr>
-          <tr>
-              {{desiredItem.name}}
-          </tr>
-          <tr>
-              {{desiredItem.description}}
-          </tr>
-        </thead>
-      </table>
-  </div>
+<app-navbar [pageTitle]="this.pageTitle"  (clickBack)="onBack()"></app-navbar>
+
+<div class='table-responsive'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <td>
+          {{desiredItem.id}}
+        </td>
+        <td>
+          {{desiredItem.name}}
+        </td>
+        <td>
+          {{desiredItem.description}}
+        </td>
+      </tr>
+    </thead>
+  </table>
 </div>
 

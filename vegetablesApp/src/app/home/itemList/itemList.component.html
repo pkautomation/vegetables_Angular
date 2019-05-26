@@ -1,36 +1,28 @@
-<app-navbar></app-navbar>
+<app-navbar [pageTitle]="this.pageTitle" (clickBack)="onBack()"></app-navbar>
 <div class='card'>
-  <div class="card-header">
-    <a [routerLink]="['/welcome']">
-      <mdb-icon fas type="button" color="elegant" size="2x" icon="angle-left" ></mdb-icon>
-    </a>
-    <a [routerLink]="['/addItem']">
-      <mdb-icon fas icon="plus-square" size="2x" mdbWavesEffect></mdb-icon>
-    </a>
-  </div>
   <div class='table-responsive'>
     <table class='table'>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of collection; index as i">
-              <td>
-                  {{item.id}}
-              </td>
-              <td>
-                  <a [routerLink]="['/itemDetails', item.id]">{{item.name}}</a>
-              <td>
-                  <a (click)="deleteMe(i)">
-                    <mdb-icon fas icon="minus"></mdb-icon>
-                  </a>
-              </td>
-          </tr>
-        </tbody>
-      </table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection; index as i">
+          <td>
+            {{item.id}}
+          </td>
+          <td>
+          <a [routerLink]="['/itemDetails', item.id]">{{item.name}}</a>
+            <td>
+              <a (click)="deleteMe(i)">
+                <mdb-icon fas icon="minus"></mdb-icon>
+              </a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

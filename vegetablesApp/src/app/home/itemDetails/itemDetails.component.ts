@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as data from '../../datasource/items.json';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Vegetable } from 'src/app/models/vegetable.js';
@@ -7,27 +7,25 @@ import { Vegetable } from 'src/app/models/vegetable.js';
   templateUrl: 'ItemDetails.component.html'
 })
 export class ItemDetailsComponent {
-  public pageTitle = 'Welcome';
+  pageTitle = 'Details';
   collection = data.vegetables;
-  //selectedItem
   desiredItem: Vegetable;
-  constructor(private route: ActivatedRoute, private router: Router) {
-
-  }
-
   value: number;
 
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+
+// tslint:disable-next-line: use-life-cycle-interface
   ngOnInit() {
-    // get URL parameters
     this.route.params.subscribe(params => {
       this.value = params.id; // --> Name must match wanted parameter
       console.log('index:' + this.value);
       this.desiredItem = this.collection.find( x => x.id == this.value);
       console.log(this.desiredItem.name);
-  });
-}
+    });
+  }
 
   onBack() {
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/itemList']);
   }
 }

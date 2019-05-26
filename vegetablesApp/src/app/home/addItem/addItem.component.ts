@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import * as data from '../../datasource/items.json';
 
@@ -7,8 +7,9 @@ import * as data from '../../datasource/items.json';
 })
 export class AddItemComponent {
   constructor(private router: Router) {}
-
+  public pageTitle = 'Add Item';
   vegetables = data.vegetables;
+  isAddPage = true;
 
   public vegetableName: string;
   public vegetableDescription: string;
