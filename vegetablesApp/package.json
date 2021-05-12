@@ -24,7 +24,7 @@
     "@types/karma": "^3.0.3",
     "@types/mocha": "^5.2.6",
     "angular-bootstrap-md": "^7.5.2",
-    "chart.js": "^2.5.0",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",
